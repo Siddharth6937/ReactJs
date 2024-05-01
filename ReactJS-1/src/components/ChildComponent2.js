@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const ChildComponent2 = () => {
+const ChildCompoent2 = () => {
     return (
-        <div className='ChildComponent2'>
-            <h2>Child Component 2</h2>
+        <div className="ChildCompoent2" >
+            <h2>Child Compoent 2</h2>
         </div>
     )
 }
 
-export default ChildComponent2
+export default ChildCompoent2;

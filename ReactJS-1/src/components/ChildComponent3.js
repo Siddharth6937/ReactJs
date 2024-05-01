@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ChildComponent3 = () => {
-    return ( 
+    return (
         <div>
-        <h2> Child Component 3</h2>
+            <h2> Child Component 3</h2>
         </div>
     )
 }

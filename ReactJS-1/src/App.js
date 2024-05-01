@@ -1,16 +1,15 @@
 import './App.css';
-import ChildComponent1 from './components/ChildComponent1/ChildComponent1';
-import ChildComponent2 from './components/ChildComponent2';
-import ChildComponent3  from './components/ChildComponent3';
+import ChildCompoent1 from './components/ChildComponent1/ChildComponent1';
+import ChildCompoent2 from './components/ChildComponent2';
+import ChildComponent3 from './components/ChildComponent3';
 
 function App() {
   return (
     <div className="App">
-      <h1> App </h1> 
-      <ChildComponent1 />
-      <ChildComponent2> </ChildComponent2>
+      <h1> App </h1>
+      <ChildCompoent1 />
+      <ChildCompoent2> </ChildCompoent2>
       <ChildComponent3 />
-
     </div>
 
   );
@@ -32,6 +31,13 @@ export default App;
 
     Fragments :-Empty JSX tags (used for nesting multiple elements inside a single parent to be returned by the component)
 
+    React follow 'one-way binding'
+
+    A component re-renders whenever there is a change in
+    1. props (Relate this with parameters in function based components)
+
+    -  Data which passed from the parent component down to the child component.
+    - Relate this with parameters in function based components.
 
     XML = Extensible Markup Language 
 */

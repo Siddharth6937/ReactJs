@@ -1,15 +1,17 @@
 import './App.css';
-import ChildCompoent1 from './components/ChildComponent1/ChildComponent1';
-import ChildCompoent2 from './components/ChildComponent2';
-import ChildComponent3 from './components/ChildComponent3';
+// import ChildCompoent1 from './components/ChildComponent1/ChildComponent1';
+// import ChildCompoent2 from './components/ChildComponent2';
+// import ChildComponent3 from './components/ChildComponent3';
+import Counter from './components/Counter';
 
 function App() {
   return (
     <div className="App">
       <h1> App </h1>
-      <ChildCompoent1 />
+      {/* <ChildCompoent1 />
       <ChildCompoent2> </ChildCompoent2>
-      <ChildComponent3 />
+      <ChildComponent3 /> */}
+      <Counter />
     </div>
 
   );

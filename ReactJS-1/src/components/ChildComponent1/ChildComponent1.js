@@ -5,16 +5,24 @@ import GrandChildComponent1 from './GrandChildComponent1';
 const ChildCompoent1 = () => {
 
     return (
-        <div className="ChildCompoent1" style={{ background: '#eee', color: 'red' }}>
+        <div className="ChildCompoent1" style={{ background: '#eee' }}>
             <h2>Child Compoent 1</h2>
             <GrandChildComponent1
-                heading="Heading 1"
+                title="Heading 1"
                 discription="I am the content of 1st heading"
-            />
+                backgroundColor= "red"
+                width="50%"
+                margin = "10px auto"
+                padding = "10px"
+             />
 
             <GrandChildComponent1
-                heading="Heading 2"
-                discription="I am the content of 2nd heading"
+                title="Heading 2"
+                discription=""
+                backgroundColor= "blue"
+                width="50%"
+                margin = "10px auto"
+                padding = "10px"
             />
         </div>
     )

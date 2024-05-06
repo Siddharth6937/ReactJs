@@ -5,26 +5,48 @@ class Counter extends React.Component {
         super(props)
 
         this.state={
-            increment :  1
+            count :  0
         }
     }
 
     increment = () => {
+
+        this.setState( prevState => ({
+            count : prevState.count + 1
+        }))
+    }
+
+    decrement = () => {
         this.setState({
-            increment : 1 + 1
+            count : this.state.count - 1
         })
     }
 
-    render() {
+    increcement5 = () =>{
+        this.increment()
+        this.increment()
+        this.increment()
+        this.increment()
+        this.increment()
+        }
+
+
+        render() {
         return (
-            <>
-                <h1>Counter {this.state.increment}</h1>
-                <button onClick={this.increment}>Incremenet</button>
-            </>
+            <div > 
+                <h1 style={{fontSize :'5em', margin:'0px'}} >Counter {this.state.count}</h1>
+                <button style={{fontSize :'2em', margin : ' 0 0 0 0'}} onClick={this.increment}>Incremenet</button>
+                <button style={{fontSize :'2em'}} onClick={this.increcement5}>Increment by 5 </button>
+
+                <br />
+                <button style={{fontSize :'2em'}} onClick={this.decrement}>Decrement</button>
+            </div>
 
         )
     }
+
 }
+
 
 
 export default Counter

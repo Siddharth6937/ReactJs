@@ -2,6 +2,7 @@ import './App.css';
 import Hello from './components/Hello';
 import HelloClass from './components/HelloClass.jsx'
 import Counter from './components/Counter.jsx';
+import RenderingUsingLoops from './components/RenderingUsingLoops.jsx';
 function App() {
   return (
     <div className="App">
@@ -9,8 +10,9 @@ function App() {
       {/* <Hello student1="Siddhath" student2="Priyanka"/>
       <Hello student1="Preeti" /> */}
       {/* <HelloClass student1="Siddhath" /> */}
+      {/* <Counter /> */}
 
-<Counter />
+      <RenderingUsingLoops />
     </div>
   );
 }

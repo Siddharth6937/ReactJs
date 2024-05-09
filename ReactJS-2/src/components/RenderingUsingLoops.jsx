@@ -32,9 +32,9 @@ class RenderingUsingLoops extends React.Component {
                     country: "Bokaro"
                 },
                 {
-                    name: "pooja",
+                    name: "preeti Singh",
                     batch: 9,
-                    country: "Bokaro"
+                    country: "Sounda"
                 }
             ]
         }

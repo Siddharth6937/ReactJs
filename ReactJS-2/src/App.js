@@ -1,18 +1,26 @@
 import './App.css';
-import Hello from './components/Hello';
-import HelloClass from './components/HelloClass.jsx'
-import Counter from './components/Counter.jsx';
-import RenderingUsingLoops from './components/RenderingUsingLoops.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Hello from './components/Hello';
+// import HelloClass from './components/HelloClass.jsx'
+// import Counter from './components/Counter.jsx';
+// import RenderingUsingLoops from './components/RenderingUsingLoops.jsx';
+// import Toggle from './components/Toggle.jsx'
+// import BulbOnOff from './components/BulbOnOff.jsx';
+import BootstrapBasics from './components/BootstrapBasics';
+
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      {/* <h1>App</h1> */}
       {/* <Hello student1="Siddhath" student2="Priyanka"/>
       <Hello student1="Preeti" /> */}
       {/* <HelloClass student1="Siddhath" /> */}
       {/* <Counter /> */}
+      {/* <RenderingUsingLoops /> */}
+      {/* <Toggle /> */}
+      {/* <BulbOnOff /> */}
 
-      <RenderingUsingLoops />
+<BootstrapBasics />
     </div>
   );
 }

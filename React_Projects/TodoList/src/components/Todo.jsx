@@ -9,7 +9,8 @@ class Todo extends Component {
         super(props);
 
         this.state = {
-            todoList: [
+            inputToDo : "",
+            toDoList: [
                 "Revise Asynchronous Javascript",
                 "Practice Array Method Question",
                 "Revise React components and props",
@@ -19,14 +20,16 @@ class Todo extends Component {
     }
 
     render() {
-        const { todoList } = this.state;
+        const {inputToDo, toDoList } = this.state;
         return (
             <Container style={{ margin: '20px auto' }}>
                 <Col md={{ span: 4, offset: 4 }}>
                     <InputGroup className="mb-3">
-                        <Form.Control size="lg" type="text" placeholder="Enter To-Do" />
+                        <Form.Control size="lg" type="text" value={inputToDo} onChange={(e) =>this.setState({inputToDo : e.target.value}) } placeholder="Enter To-Do" />
 
-                        <Button variant="outline-success" id="button-addon1">
+                        <Button variant="outline-success" id="button-addon1" onClick={() =>{ this.setState((prevState) => ({
+                            toDoList : [...prevState.toDoList , inputToDo]
+                        }))} }>
                             +
                         </Button>
 
@@ -34,8 +37,8 @@ class Todo extends Component {
                     </InputGroup>
         
                     <ListGroup className="to-do-list">
-                    {todoList.map(todo => (
-                        <ListGroup.Item>
+                    {toDoList.map((todo, index)=> (
+                        <ListGroup.Item  key={index}>
                             <Row>
                                 <Col md={9}>{todo}</Col>
                                 <Col md={3} className="action-btns">

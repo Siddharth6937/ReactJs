@@ -7,7 +7,6 @@ const App = () => {
   return (
     <div className="App">
       <NavbarComponent />
-      <h1>App</h1>
       <Photo />
     </div>
   );

@@ -1,8 +1,26 @@
 .to-do-list{
     text-align: center;
 }
+.to-do-input{
+    border: 1px solid #2125293f;
+}
+.to-do-input:focus{
+    box-shadow: none;
+    border: 1px solid #212529;
+}
+.to-do-input-btn:focus{
+    box-shadow: none;
+}
 
 .action-btns{
     display: flex;
     justify-content: space-around;
+    padding:  0px;
+}
+
+.action-btns .btn{
+    border-radius:  20px;
+}
+.completed{
+    text-decoration: line-through;
 }

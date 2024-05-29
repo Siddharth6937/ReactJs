@@ -5,6 +5,7 @@ import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
+import { IoMdDoneAll } from "react-icons/io";
 
 class Todo extends Component {
     constructor(props) {
@@ -13,26 +14,31 @@ class Todo extends Component {
         this.state = {
             inputToDo: "",
             toDoList: [],
-            isEditing : false,
-            editingIndex : ''
+            isEditing: false,
+            editingIndex: ''
         }
     }
-    addOrUpdateToDo () {
-        const {inputToDo, isEditing, editingIndex} = this.state;
-        if(inputToDo){
-            if(isEditing){
-                this.setState((prevState) =>({
+    addOrUpdateToDo() {
+        const { inputToDo, isEditing, editingIndex } = this.state;
+        if (inputToDo) {
+            if (isEditing) {
+                this.setState((prevState) => ({
                     toDoList: prevState.toDoList.map((todo, index) => {
-                        if(index ===  editingIndex){
-                            todo = inputToDo
+                        if (index === editingIndex) {
+                            todo.text = inputToDo
                         }
-                            return todo
-                    })
+
+                        return todo
+                    }),
+                    inputToDo: "",
+                    isEditing : false,
+                    editingIndex : ''
                 }))
+       
             } else {
                 this.setState((prevState) => ({
-                   toDoList: [...prevState.toDoList, inputToDo],
-                   inputToDo : "",
+                    toDoList: [...prevState.toDoList, {text : inputToDo, completed : false }],
+                    inputToDo: "",
                 }))
             }
         }
@@ -46,11 +52,20 @@ class Todo extends Component {
 
     editToDo(inputIndex) {
         this.setState((prevState) => ({
-            inputToDo: prevState.toDoList[inputIndex],
-            isEditing : true,
-            editingIndex : inputIndex
+            inputToDo: prevState.toDoList[inputIndex].text,
+            isEditing: true,
+            editingIndex: inputIndex
         }))
+    }
 
+    completdToDo(inputIndex){
+        this.setState((prevState) => ({
+            toDoList : prevState.toDoList.map((todo, index) =>{
+                if(index === inputIndex)
+                    todo.completed = true
+                return todo;
+            }),
+        }))
     }
 
     render() {
@@ -62,7 +77,7 @@ class Todo extends Component {
                         <Form.Control size="lg" type="text" value={inputToDo} onChange={(e) => this.setState({ inputToDo: e.target.value })} placeholder="Enter To-Do" />
 
                         <Button variant="outline-success" id="button-addon1" onClick={() => { this.addOrUpdateToDo() }}>
-                            {isEditing ? <FaRegCheckCircle /> : <FaPlus /> }
+                            {isEditing ? <FaRegCheckCircle /> : <FaPlus />}
                         </Button>
 
 
@@ -72,22 +87,32 @@ class Todo extends Component {
                         {toDoList.map((todo, index) => (
                             <ListGroup.Item key={index}>
                                 <Row>
-                                    <Col md={9}>{todo}</Col>
+                                    <Col className={todo.completed && 'completed'} xs={9}>{todo.text}</Col>
 
-                                    <Col md={3}
+                                    <Col xs={3}
                                         className="action-btns"
                                     >
                                         {" "}
                                         <Button
                                             variant="warning"
                                             size="sm"
-                                            onClick={() => {this.editToDo(index)}}
-                                            > <FiEdit /></Button>
+                                            onClick={() => { this.editToDo(index) }}
+                                            disabled={todo.completed}
+                                        > <FiEdit /></Button>
                                         <Button
                                             variant="danger"
                                             size="sm"
                                             onClick={() => { this.delteToDo(index) }}
                                         > <RiDeleteBin5Fill /></Button>
+                                        <Button
+                                        variant="success"
+                                        size="sm"
+                                        onClick={() => this.completdToDo(index)}
+                                        disabled={todo.completed}
+                                        > 
+                                        <IoMdDoneAll />
+                                        </Button>
+                                        
                                     </Col>
                                 </Row>
                             </ListGroup.Item>

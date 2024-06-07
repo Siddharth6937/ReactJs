@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import PhotoLogo from '../assets/logo.png'
+import { NavLink } from 'react-router-dom';
 
 const NavbarComponent = () => {
   return (
@@ -20,9 +21,9 @@ const NavbarComponent = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link >Photos</Nav.Link>
-            <Nav.Link >About Us</Nav.Link>
-            <Nav.Link >Contact Us</Nav.Link>
+            <Nav.Link as={NavLink} to='/'>Photos</Nav.Link>
+            <Nav.Link as={NavLink} to='/about'>About Us</Nav.Link>
+            <Nav.Link as={NavLink} to='/contact'>Contact Us</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link >Sign Up</Nav.Link>

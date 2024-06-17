@@ -4,8 +4,10 @@ import NavbarComponent from './components/NavbarComponent';
 import Photo from './components/Photo/Photo';
 import About from './components/About';
 import Contact from './components/Contact';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import EnlargedPhoto from './components/EnlargedPhoto';
+import NotFound from './components/NotFound';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/photos/:id' element={<EnlargedPhoto />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>

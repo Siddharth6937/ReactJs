@@ -5,6 +5,7 @@ import NewsList from './components/NewsList/NewsList.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SingleNews from './components/SingleNews.jsx';
+import NotFound from './components/NotFound.jsx';
 import axios from 'axios';
 
 function App() {
@@ -26,16 +27,19 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <NavbarComponent />
-      <Routes>
-        <Route path='/' element={<NewsList newsList={newsList} />} />
-        <Route path='/news/:id' element={<SingleNews newsList={newsList} />} />
-        <Route path='*' element={<SingleNews newsList={newsList} />} />
-      </Routes>
+    <div className='App'>
+      <BrowserRouter>
+        <NavbarComponent />
+        <Routes>
+          <Route path='/' element={<NewsList newsList={newsList} />} />
+          <Route path='/about'  />
+          <Route path='/contact'  />
+          <Route path='/news/:id' element={<SingleNews newsList={newsList} />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
 
-    </BrowserRouter>
-
+      </BrowserRouter>
+    </div>
   );
 }
 

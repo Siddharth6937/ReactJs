@@ -1,0 +1,36 @@
+.single-photo{
+    margin-bottom: 10px;
+}
+.photo-img{
+ height: 220px;
+}
+
+.spinner-wrapper div{
+    margin: 50px 0;
+}
+
+.post-container{
+   margin-top: 10px;
+}
+
+.post-header{
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn-outer{
+    text-align: right;
+}
+
+.action-btn-outer .btn{
+    margin-left: 10px;
+}
+.post-time{
+    margin-bottom: 0px;
+    opacity: 0.6;
+}
+.inactive{
+    opacity: 0.6;
+}

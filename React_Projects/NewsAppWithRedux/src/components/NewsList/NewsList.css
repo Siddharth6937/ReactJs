@@ -15,3 +15,13 @@
 .single-news .card-text{
     height: 90px;
 }
+.spinner-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.error-alert{
+    margin-top: 20px auto;
+    width: 40em;
+}
